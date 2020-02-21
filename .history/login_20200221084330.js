@@ -45,39 +45,7 @@ const credentials = new Credentials({
 console.log(credentials);
 app.get('/', (req, res) => {
     credentials.createDisclosureRequest({
-      claims: {
-        verifiable: {
-        //   email: {
-        //     iss: [
-        //       {
-        //         did: 'did:web:uport.claims',
-        //         url: 'https://uport.claims/email'
-        //       },
-        //       {
-        //         did: 'did:web:sobol.io',
-        //         url: 'https://sobol.io/verify'
-        //       }
-        //     ],
-        //     reason: 'Whe need to be able to email you'
-        //   },
-          "MTA ID": {
-            // claim
-            // "Mã học viên": null,
-            essential: true,
-            iss: [
-              {
-                did: 'did:ethr:0xfBEFa24A40C8D1a8582cE9aD4D9B960aba174BC7.years',
-                url: 'https://mta.edu.vn'
-              }
-            ],
-            reason: 'To legally be able to open your account'
-          }
-        },
-        user_info: {
-          name: { essential: true, reason: "Show your name to other users"},
-          country: null
-        }
-      },
+      claims: ["name", "email"],
       notifications: true,
       callbackUrl: endpoint + '/callback'
     }).then(requestToken => {

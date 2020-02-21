@@ -61,13 +61,12 @@ app.get('/', (req, res) => {
         //     reason: 'Whe need to be able to email you'
         //   },
           "MTA ID": {
-            // claim
-            // "Mã học viên": null,
+            "Mã học viên": true,
             essential: true,
             iss: [
               {
-                did: 'did:ethr:0xfBEFa24A40C8D1a8582cE9aD4D9B960aba174BC7.years',
-                url: 'https://mta.edu.vn'
+                did: 'did:ethr:0xfBEFa24A40C8D1a8582cE9aD4D9B960aba174BC7',
+                // url: 'https://idverifier.example'
               }
             ],
             reason: 'To legally be able to open your account'

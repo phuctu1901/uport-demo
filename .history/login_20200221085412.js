@@ -46,7 +46,7 @@ console.log(credentials);
 app.get('/', (req, res) => {
     credentials.createDisclosureRequest({
       claims: {
-        verifiable: {
+        // verifiable: {
         //   email: {
         //     iss: [
         //       {
@@ -60,19 +60,17 @@ app.get('/', (req, res) => {
         //     ],
         //     reason: 'Whe need to be able to email you'
         //   },
-          "MTA ID": {
-            // claim
-            // "Mã học viên": null,
-            essential: true,
-            iss: [
-              {
-                did: 'did:ethr:0xfBEFa24A40C8D1a8582cE9aD4D9B960aba174BC7.years',
-                url: 'https://mta.edu.vn'
-              }
-            ],
-            reason: 'To legally be able to open your account'
-          }
-        },
+        //   // nationalIdentity: {
+        //   //   essential: true,
+        //   //   iss: [
+        //   //     {
+        //   //       did: 'did:web:idverifier.claims',
+        //   //       url: 'https://idverifier.example'
+        //   //     }
+        //   //   ],
+        //   //   reason: 'To legally be able to open your account'
+        //   // }
+        // },
         user_info: {
           name: { essential: true, reason: "Show your name to other users"},
           country: null
